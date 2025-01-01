@@ -1,0 +1,318 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Google Fonts Integration */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap');
+
+/* Body and Page Setup */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+/* Container for the layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation Bar Styling */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+/* Navigation Links */
+.nav-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.nav-bar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.nav-bar ul li a:hover {
+    color: #ff6f61;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+/* Dark Mode Navigation */
+body.dark-mode .nav-bar {
+    background-color: #f5f5f5; /* Lighter background in dark mode */
+}
+
+body.dark-mode .nav-bar ul li a {
+    color: #333; /* Darker text color in dark mode */
+}
+
+body.dark-mode .nav-bar ul li a:hover {
+    color: #ff6f61; /* Hover color remains the same in dark mode */
+}
+
+/* Dark Mode Button Styling */
+.dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none; /* Change background to yellow */
+    border: none;
+    color: #333; /* Darker text color for contrast */
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%; /* Optional: Make it circular */
+    padding: 10px; /* Add some padding */
+    transition: transform 0.3s, background-color 0.3s, color 0.3s; /* Smooth animation and color change */
+}
+
+.dark-mode-toggle i {
+    color: #FFD700; /* Yellow color for both icons */
+}
+
+.dark-mode-toggle:hover {
+    transform: rotate(90deg); /* Optional: add rotation effect on hover */
+}
+
+/* Moon and Sun Icon Switching */
+body.dark-mode .dark-mode-toggle i.moon {
+    color: aquamarine;
+    display: none; /* Hide moon icon in dark mode */
+}
+
+body.dark-mode .dark-mode-toggle i.sun {
+    display: inline-block;
+    color: #333; /* Sun icon color in dark mode */
+}
+
+body:not(.dark-mode) .dark-mode-toggle i.sun {
+    display: none; /* Hide sun icon in light mode */
+}
+
+body:not(.dark-mode) .dark-mode-toggle i.moon {
+    display: inline-block;
+    color: #ff6f61; /* Moon icon color in light mode */
+}
+
+/* Homepage Section */
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease-out;
+}
+
+/* Profile Section Styling */
+.profile {
+    position: relative;
+    text-align: center;
+    background: url('bg.jpg'); /* Set the uploaded image */
+    width: 1600px; /* Set a specific width */
+    height: 500px;
+    padding: 50px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Heading */
+.profile h1 {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.profile h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+}
+
+body.dark-mode .profile {
+    background: url('bgw.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+
+body.dark-mode .profile h1{
+    color: black;
+}
+
+body.dark-mode .profile h3{
+    color: black;
+}
+
+
+.home h1 {
+    font-size: 36px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+.home:hover h1 {
+    color: #ff6f61;
+}
+
+.section {
+    margin: 80px 0;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text */
+}
+
+body.dark-mode .section {
+    background-color: #444;
+    color: #f5f5f5;
+}
+
+/* Dark Mode Section Titles */
+body.dark-mode .section h2 {
+    color: #f5f5f5;
+}
+
+/* Dark Mode List Items */
+body.dark-mode .section ul {
+    color: #f5f5f5;
+}
+
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+/* Section Text Styling */
+.section p,
+.section ul {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Unordered list (for Education, Experience, Skills) */
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+/* Skill Progress Bars Styling */
+.skills-list {
+    padding: 20px;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #ff6f61;
+    border-radius: 5px;
+}
+
+progress::-moz-progress-bar {
+    background-color: #ff6f61;
+    border-radius: 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .nav-bar ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .home h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home h1 {
+        font-size: 24px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .nav-bar ul li a {
+        font-size: 16px;
+    }
+}
